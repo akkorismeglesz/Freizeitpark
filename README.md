@@ -2,6 +2,8 @@
 
 The "Freizeitpark" is a Java program which simulates a visit to the amusement park. Just like in a real amusement park you have to buy an admission ticket. Then you can decide how long you stay in the amusement park and what activities you want to try out.
 
+<p align="center"><img src="https://i.pinimg.com/originals/95/e6/8b/95e68b314942a661808207efeadef8e4.jpg" height='300'></p>
+
 ## Overview
 + **Ticket Purchase:**  Visitors can purchase tickets for adults, children (under 14 years), teenagers (between 14 and 18 years) and students with corresponding discounts.
 
