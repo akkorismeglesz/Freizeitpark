@@ -7,6 +7,7 @@ public class Freizeitpark {
 	public static Scanner scan = new Scanner(System.in);
 	public static int vergangeneZeit = 0;
 	public static int dauerImPark = 0;
+	public static double gesamtausgaben = 0.00;
 
 	public static void main(String[] args) {
 		// TODO Automatisch generierter Methodenstub
