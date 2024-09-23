@@ -67,6 +67,8 @@ public class Freizeitpark {
 	    	DecimalFormat df = new DecimalFormat("#.##");
 	    	String gerundeterGesamtpreis = df.format(gesamtpreis);
 
+		gesamtausgaben += gesamtpreis;
+		
 	    	System.out.println("Gesamtpreis fuer die Eintrittskarten: " + gerundeterGesamtpreis + " Euro.");
 		System.out.println();
 		
@@ -83,7 +85,9 @@ public class Freizeitpark {
 			int anzahlDerKugeln = scan.nextInt();
 			double preisProKugel = 1.20;
 			double endpreisFuerEis = anzahlDerKugeln * preisProKugel;
-			
+
+			gesamtausgaben += endpreisFuerEis;
+		
 			// Runden auf zwei Dezimalstellen
 			DecimalFormat df = new DecimalFormat("#.##");
 			String gerundeterBetragEis = df.format(endpreisFuerEis);
@@ -110,8 +114,7 @@ public class Freizeitpark {
 			System.out.println("2. Achterbahn fahren");
 			System.out.println("3. WC benutzen");
 			System.out.println("4. Sich betrinken");
-			System.out.println("5. Weiter durch den Park schlendern");
-			System.out.println("6. Park verlassen");
+			System.out.println("5. Park verlassen");
 			System.out.println();
 			
 			int aktivitaet = scan.nextInt();
@@ -133,10 +136,6 @@ public class Freizeitpark {
 					vergangeneZeit += 20;
 					break;
 				case 5:
-					durchDenParkSchlendern();
-					vergangeneZeit += 10;
-					break;
-				case 6:
 					parkVerlassen();
 					vergangeneZeit += 10;
 					break;
@@ -145,12 +144,15 @@ public class Freizeitpark {
 			}
 			
 			// vergangeneZeit++;
-			System.out.println("Vergangene Zeit: " + vergangeneZeit + "Minuten von " + dauerImPark + " Minuten.");
+			System.out.println("Vergangene Zeit: " + vergangeneZeit + " Minuten von " + dauerImPark + " Minuten.");
 		}
 		
 		// nach abgelaufener Zeit
 		System.out.println();
 		System.out.println("Sie haben keine Zeit mehr.");
+		DecimalFormat df = new DecimalFormat("#.##");
+		String gerundeteGesamtausgaben = df.format(gesamtausgaben);
+		System.out.println("Sie haben insgesamt " + gerundeteGesamtausgaben +" Euro ausgegeben.");
 		parkVerlassen();
 	}
 	
@@ -163,7 +165,9 @@ public class Freizeitpark {
 			int anzahlDerAchterbahnfahrenden = scan.nextInt();
 			double preisProFahrenden = 2.80;
 			double endpreisFuerAchterbahn = anzahlDerAchterbahnfahrenden * preisProFahrenden;
-			
+
+			gesamtausgaben += endpreisFuerAchterbahn;
+		
 			// Runden auf zwei Dezimalstellen
 			DecimalFormat df = new DecimalFormat("#.##");
 			String gerundeterBetragAchterbahn = df.format(endpreisFuerAchterbahn);
@@ -184,7 +188,9 @@ public class Freizeitpark {
 			int anzahlWCBenutzenden = scan.nextInt();
 			double preisWC = 0.70;
 			double endpreisFuerWC = anzahlWCBenutzenden * preisWC;
-			
+
+			gesamtausgaben += endpreisFuerWC;
+		
 			DecimalFormat df = new DecimalFormat("#.##");
 			String gerundeterBetragWC = df.format(endpreisFuerWC);
 			
@@ -205,6 +211,8 @@ public class Freizeitpark {
 					int anzahlSichBetrinkenden = scan.nextInt();
 					int preisAlkohol = 21;
 					int endpreisFuerAlkohol = anzahlSichBetrinkenden * preisAlkohol;
+
+					gesamtausgaben += endpreisFuerAlkohol;
 					
 					System.out.println("Sie muessen insgesamt " + endpreisFuerAlkohol + " Euro bezahlen.");
 					
@@ -221,8 +229,11 @@ public class Freizeitpark {
 		String parkVerlassen = scan.next();
 		
 		if (parkVerlassen.equalsIgnoreCase("ja")) { */
-			System.out.println("Vielen Dank fuer Ihren Besuch in unserem Freizeitpark! Wir hoffen, Sie hatten eine tolle Zeit und freuen uns darauf, Sie bald wieder bei uns begruessen zu duerfen. Auf Wiedersehen!");
+			System.out.println("Vielen Dank fuer Ihren Besuch in unserem Freizeitpark!");
+			System.out.println("Wir hoffen, Sie hatten eine tolle Zeit und freuen uns darauf, Sie bald wieder bei uns begruessen zu duerfen.");
+			System.out.println("Auf Wiedersehen!");
 		// }
+		
 	}
 
 }
